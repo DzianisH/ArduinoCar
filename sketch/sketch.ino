@@ -11,18 +11,17 @@ void setup() {
 void loop() {
   Serial.println("hello world");
 
-  m.motor(1,FORWARD,255);
+  for (int i = 1; i <= 4; ++i){
+    m.motor(i, FORWARD, 120);
+  }
+  
   delay(myDelay);
-  m.motor(1,FORWARD,125);
+
+  for (int i = 1; i <= 4; ++i){
+    m.motor(i, BACKWARD, 120);
+  }
+
   delay(myDelay);
-  m.motor(1,RELEASE,0);
-  delay(myDelay);
-  m.motor(1,BACKWARD,125); 
-  delay(myDelay);
-  m.motor(1,BACKWARD,255); 
-  delay(myDelay);
-  m.motor(1,BACKWARD,125); 
-  delay(myDelay);
-  m.motor(1,RELEASE,0);
-  delay(myDelay);
+
+  
 }
