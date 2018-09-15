@@ -1,27 +1,18 @@
 #include <MotorDriver.h>
+#include "Vehicle.h"
 
 
 const int myDelay = 1500;
-MotorDriver m;
+MotorDriver motorDriver;
+Vehicle vehicle = Vehicle(motorDriver);
+
 
 void setup() {
-  Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println("hello world");
-
-  for (int i = 1; i <= 4; ++i){
-    m.motor(i, FORWARD, 120);
-  }
-  
+  vehicle.move_forward();
   delay(myDelay);
-
-  for (int i = 1; i <= 4; ++i){
-    m.motor(i, BACKWARD, 120);
-  }
-
-  delay(myDelay);
-
-  
+  vehicle.spin_right();
+  delay(myDelay / 10);
 }
