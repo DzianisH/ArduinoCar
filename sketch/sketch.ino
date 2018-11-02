@@ -13,6 +13,6 @@ void setup() {
 void loop() {
   vehicle.move_forward();
   delay(myDelay);
-  vehicle.spin_right();
-  delay(myDelay / 10);
+//  vehicle.spin_right();
+//  delay(myDelay / 10);
 }

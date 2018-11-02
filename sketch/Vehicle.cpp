@@ -2,7 +2,20 @@
 
 Vehicle::Vehicle(MotorDriver driver) {
   motorDriver = driver;
-  speed = 100;
+  speed = 255;
+}
+
+Vehicle::Vehicle(MotorDriver driver, int speed) {
+  motorDriver = driver;
+  this->speed = speed;
+}
+
+void Vehicle::set_speed(int newSpeed) {
+  speed = newSpeed;
+}
+
+int Vehicle::get_speed() {
+  return speed;
 }
 
 void Vehicle::move_forward() {
@@ -39,5 +52,3 @@ void Vehicle::spin_right() {
   motorDriver.motor(MOTOR3, BACKWARD, speed);
   motorDriver.motor(MOTOR4, BACKWARD, speed);
 }
-
-

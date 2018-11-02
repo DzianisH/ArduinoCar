@@ -11,6 +11,9 @@
 class Vehicle {
   public:
     Vehicle(MotorDriver driver);
+    Vehicle(MotorDriver driver, int speed);
+    void set_speed(int newSpeed);
+    int get_speed();
     void move_forward();
     void move_backward();
     void stop();
