@@ -10,8 +10,8 @@
 
 class Vehicle {
   public:
-    Vehicle();
     Vehicle(int speed);
+    Vehicle() : Vehicle(255){}
     void set_speed(int newSpeed);
     int get_speed();
     void move_forward();
@@ -23,4 +23,5 @@ class Vehicle {
     MotorDriver *motorDriver;
     int speed;
 };
+
 #endif

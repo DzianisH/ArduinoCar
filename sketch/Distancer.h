@@ -15,7 +15,4 @@ class Distancer {
     NewPing *sonar;
 };
 
-
-
-
 #endif

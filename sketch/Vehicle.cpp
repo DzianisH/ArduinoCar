@@ -1,12 +1,7 @@
 #include "Vehicle.h"
 
-Vehicle::Vehicle() {
-  motorDriver = &MotorDriver();
-  speed = 255;
-}
-
 Vehicle::Vehicle(int speed) {
-  motorDriver = &MotorDriver();
+  motorDriver = new MotorDriver();
   this->speed = speed;
 }
 

@@ -1,26 +1,26 @@
 #include "Vehicle.h"
 #include "Distancer.h"
 
-const int myDelay = 75;
+const int loopDelay = 75;
 Vehicle *vehicle;
 Distancer *distancer;
 
 void setup() {
   Serial.begin(9600);
-  vehicle = new Vehicle(180);
+  vehicle = new Vehicle(200);
   distancer = new Distancer(24, 22);
 }
 
 void loop() {
-  int dist_cm = distancer->ping_cm();
-  Serial.print(dist_cm);
-  Serial.println("c!");
-  if (dist_cm < 25  ) {
-    vehicle->stop();
-    digitalWrite(13, HIGH);
+  delay(loopDelay);
+  int distCm= distancer->ping_cm();
+  Serial.print(distCm);
+  Serial.println("cm");
+  if (distCm < 25) {
+    vehicle->spin_right();
+    delay(2000);
   } else {
-    digitalWrite(13, LOW);
     vehicle->move_forward();
   }
-  delay(myDelay);
+  delay(loopDelay);
 }
