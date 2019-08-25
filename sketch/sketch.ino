@@ -7,7 +7,7 @@ Distancer *distancer;
 
 void setup() {
   Serial.begin(9600);
-  vehicle = new Vehicle(200);
+  vehicle = new Vehicle();
   distancer = new Distancer(24, 22);
 }
 
